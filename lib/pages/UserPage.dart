@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:lab2/model/AppModel.dart';
 import 'package:lab2/widgets/BorderedButtonWithIcon.dart';
 import 'package:lab2/widgets/ListItemWithIconText.dart';
+import 'package:provider/provider.dart';
 
 class UserPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    var model = context.watch<AppModel>();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
@@ -29,9 +34,9 @@ class UserPage extends StatelessWidget {
                       size: 50,
                     ),
                     Text(
-                      "Богдан Колесник",
+                      model.userName,
                       style: TextStyle(fontSize: 20, color: Colors.white),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -64,7 +69,7 @@ class UserPage extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      "28.25 / 28.49",
+                                      model.usd.toString(),
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ],
@@ -86,8 +91,10 @@ class UserPage extends StatelessWidget {
                                 ]),
                                 Row(
                                   children: [
-                                    Text("33.30 / 33.78",
-                                        style: TextStyle(color: Colors.white)),
+                                    Text(
+                                      model.euro.toString(),
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   ],
                                 ),
                               ],

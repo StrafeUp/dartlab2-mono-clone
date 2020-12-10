@@ -21,6 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  provider: ^4.3.2+3
+  http: ^0.12.2
+  shared_preferences: ^0.5.12+4
   flutter:
     sdk: flutter
 
@@ -49,6 +52,10 @@ flutter:
     - assets/PayCat.png
     - assets/CardPart.png
     - assets/DepositCat.png
+    - assets/dep1.png
+    - assets/dep2.png
+    - assets/dep3.png
+    - assets/dep4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

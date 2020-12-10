@@ -5,7 +5,22 @@ import 'package:flutter/widgets.dart';
 import 'package:lab2/widgets/CardOperationsButton.dart';
 import 'package:lab2/widgets/TransactionElement.dart';
 
-class CardPage extends StatelessWidget {
+class CardPage extends StatefulWidget {
+
+  @override
+  _CardPageState createState() => _CardPageState();
+}
+
+class _CardPageState extends State<CardPage> {
+  double _balance = 47.04;
+
+  void incrementBalance() {
+    setState(() {
+      print("pressed");
+      _balance++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +45,7 @@ class CardPage extends StatelessWidget {
                           Container(
                               width: 200,
                               child: Text(
-                                "47.04 \$",
+                                "$_balance \$",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 45),
                               )),
@@ -63,10 +78,10 @@ class CardPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CardOperationsButton(
-                        Icons.arrow_downward, "Пополнить свою карту"),
+                        Icons.arrow_downward, "Пополнить свою карту", incrementBalance),
                     CardOperationsButton(
-                        Icons.subdirectory_arrow_right, "Перевести на карту"),
-                    CardOperationsButton(Icons.plus_one, "Другие платежи")
+                        Icons.subdirectory_arrow_right, "Перевести на карту", incrementBalance),
+                    CardOperationsButton(Icons.plus_one, "Другие платежи", incrementBalance)
                   ],
                 ),
               ),

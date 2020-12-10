@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:lab2/pages/InstallmentsOptions.dart';
 
 class InstallmentsPage extends StatelessWidget {
   @override
@@ -48,7 +49,7 @@ class InstallmentsPage extends StatelessWidget {
               margin: EdgeInsets.all(10),
               child: Text(
                 "1 000.00 \$",
-                style: new TextStyle(fontSize: 40, color: Colors.white),
+                style: TextStyle(fontSize: 40, color: Colors.white),
               ),
             ),
             Container(
@@ -67,7 +68,13 @@ class InstallmentsPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                onPressed: null,
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InstallmentsOptions(),
+                      ));
+                },
                 fillColor: Colors.white,
                 child: Text(
                   "Оформить рассрочку",

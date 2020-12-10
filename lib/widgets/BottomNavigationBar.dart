@@ -14,6 +14,7 @@ class BottomBarExample extends StatefulWidget {
 class _BottomBarExampleState extends State<BottomBarExample> {
   int _page = 0;
   PageController _pageViewController;
+  Function getMoneyFromCashBack;
 
   @override
   void initState() {

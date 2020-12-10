@@ -49,7 +49,9 @@ class DepositPage extends StatelessWidget{
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: null,
+                  onPressed: (){
+                    Navigator.pushNamed(context, "/DepositOptions");
+                  },
                   fillColor: Colors.white,
                   child: Text(
                     "Открыть новый депозит",
